@@ -127,7 +127,8 @@ impl SessionContextOrcExt for SessionContext {
         // SessionContext::_read_type
         let table_paths = table_paths.to_urls()?;
         let session_config = self.copied_config();
-        let listing_options = ListingOptions::new(Arc::new(OrcFormat)).with_file_extension(".orc");
+        let listing_options =
+            ListingOptions::new(Arc::new(OrcFormat)).with_file_extension(options.file_extension);
 
         let option_extension = listing_options.file_extension.clone();
 
